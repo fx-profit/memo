@@ -621,7 +621,8 @@
                 '--accent':     '#3498db',
                 '--dark':       '#7f8c8d',
                 '--header-bg':  '#ffffff',
-                '--grid-line':  '#eee',
+                '--grid-line':  '#EEE',
+                '--day-header-bg': '#F8F9FA',
                 '--body-color': '#333333',
                 '--hl-color':   '#d6eaf8',
                 '--nav-color':  '#999999',
@@ -640,6 +641,7 @@
                 '--header-from':'#42A5F5',
                 '--header-to':  '#26C6DA',
                 '--grid-line':  '#e3f2fd',
+                '--day-header-bg': '#e3f2fd',
                 '--body-color': '#37474F',
                 '--hl-color':   '#bbdefb',
                 '--nav-color':  '#2196F3',
@@ -686,7 +688,7 @@
                 el.style.borderColor     = t['--grid-line'];
             });
             document.querySelectorAll('.day-header').forEach(el => {
-                el.style.backgroundColor = t['--grid-line'];
+                el.style.backgroundColor = t['--day-header-bg'] || t['--grid-line'];
             });
 
             // アクションボタン
