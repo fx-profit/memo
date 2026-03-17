@@ -71,6 +71,7 @@
             cursor: pointer;
             border: none;
             color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
         #appTitle:focus {
             background: rgba(255,255,255,0.15);
@@ -819,6 +820,12 @@
             if (headerEl) headerEl.innerText = `${year}年 ${month + 1}月`;
 
             grid.innerHTML = dayHeaderHtml;
+            // 曜日ヘッダーにテーマの背景色を適用
+            const t = THEMES[currentTheme] || THEMES.default;
+            const dayHeaderBg = t['--day-header-bg'] || t['--grid-line'];
+            grid.querySelectorAll('.day-header').forEach(el => {
+                el.style.backgroundColor = dayHeaderBg;
+            });
             const firstDay = new Date(year, month, 1).getDay();      // 月初の曜日（0=日）
             const lastDate = new Date(year, month + 1, 0).getDate();  // 月末日
             const fragment = document.createDocumentFragment();
