@@ -30,7 +30,7 @@
         ================================================ */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--main-bg);
+            background-color: #F7F7F7;
             color: #2E4039;
             margin: 0;
             padding: 0;
@@ -48,10 +48,15 @@
            ・右端に検索ボタンを絶対配置
         ================================================ */
         header {
-            width: 100%;
+            width: calc(100% - 20px);
+            max-width: 500px;
+            align-self: center;
+            border-radius: 16px;
+            box-sizing: border-box;
             background: var(--header-bg);
             color: white;
             padding-top: calc(env(safe-area-inset-top, 20px) + 15px);
+            margin-top: 16px;
             padding-bottom: 15px;
             text-align: center;
             box-shadow: none;
@@ -69,6 +74,7 @@
         }
         #appTitle:focus {
             background: rgba(255,255,255,0.15);
+            border-radius: 6px;
             outline: none;
         }
         #searchBtn {
@@ -134,7 +140,7 @@
         }
         .nav-btn:active { opacity: 1; }
         #calendarHeader {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: var(--dark);
             letter-spacing: 0.05em;
@@ -610,7 +616,7 @@
         const THEMES = {
             default: {
                 type:           'flat',
-                '--main-bg':    '#F0F2F5',
+                '--main-bg':    '#F7F7F7',
                 '--primary':    '#3498db',
                 '--accent':     '#3498db',
                 '--dark':       '#7f8c8d',
@@ -620,7 +626,7 @@
                 '--hl-color':   '#d6eaf8',
                 '--nav-color':  '#999999',
                 headerText:     'var(--dark)',
-                headerShadow:   '0 2px 8px rgba(0,0,0,0.2)',
+                headerShadow:   '0 3px 10px rgba(0,0,0,0.12)',
                 exportBg:       '#F39800',
                 importBg:       '#3498db',
                 saveBg:         '#3498db',
